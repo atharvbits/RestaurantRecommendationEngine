@@ -5,10 +5,10 @@ import org.example.model.CostTracking;
 import org.example.model.CuisineTracking;
 import org.example.model.User;
 import org.example.service.UserService;
-import org.example.service.exceptions.PrimaryCostBracketNotFoundException;
-import org.example.service.exceptions.PrimaryCuisineNotFoundException;
-import org.example.service.exceptions.SecondaryCostBracketNotFoundException;
-import org.example.service.exceptions.SecondaryCuisineNotFoundException;
+import org.example.exceptions.PrimaryCostBracketNotFoundException;
+import org.example.exceptions.PrimaryCuisineNotFoundException;
+import org.example.exceptions.SecondaryCostBracketNotFoundException;
+import org.example.exceptions.SecondaryCuisineNotFoundException;
 
 import java.util.Arrays;
 import java.util.Comparator;

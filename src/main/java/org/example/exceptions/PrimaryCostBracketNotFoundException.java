@@ -1,4 +1,4 @@
-package org.example.service.exceptions;
+package org.example.exceptions;
 
 public class PrimaryCostBracketNotFoundException extends RuntimeException{
     public PrimaryCostBracketNotFoundException(String s) {

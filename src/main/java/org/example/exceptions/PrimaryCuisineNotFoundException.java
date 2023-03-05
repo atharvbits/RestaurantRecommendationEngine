@@ -1,4 +1,4 @@
-package org.example.service.exceptions;
+package org.example.exceptions;
 
 public class PrimaryCuisineNotFoundException extends RuntimeException{
     public PrimaryCuisineNotFoundException(String s) {

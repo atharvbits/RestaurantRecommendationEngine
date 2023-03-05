@@ -23,13 +23,13 @@ class RestaurantRecommendationsImplTest {
 
     RestaurantRecommendationsImpl restaurantRecommendations;
 
-    @Mock
-    UserService userService ;
+//    @Mock
+//    UserService userService ;
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
-        MockitoAnnotations.initMocks(this);
-        restaurantRecommendations = new RestaurantRecommendationsImpl(userService);
+//        MockitoAnnotations.initMocks(this);
+        restaurantRecommendations = new RestaurantRecommendationsImpl(new UserServiceImpl());
     }
 
     @org.junit.jupiter.api.Test
@@ -48,10 +48,10 @@ class RestaurantRecommendationsImplTest {
         User user = new User(cuisines,costBracket);
         Restaurant[] restaurants = {restaurant1,restaurant2,restaurant3};
         List<String> expectedOutput = Arrays.asList("3","2","1");
-        Mockito.when(userService.getPrimaryCostBracket(user)).thenReturn(2);
-        Mockito.when(userService.getSecondaryCostBracket(user)).thenReturn(new int[]{3,1});
-        Mockito.when(userService.getPrimaryCuisine(user)).thenReturn(Cuisine.CHINESE);
-        Mockito.when(userService.getSecondaryCuisine(user)).thenReturn(new Cuisine[]{Cuisine.SOUTH_INDIAN,Cuisine.NORTH_INDIAN});
+//        Mockito.when(userService.getPrimaryCostBracket(user)).thenReturn(2);
+//        Mockito.when(userService.getSecondaryCostBracket(user)).thenReturn(new int[]{3,1});
+//        Mockito.when(userService.getPrimaryCuisine(user)).thenReturn(Cuisine.CHINESE);
+//        Mockito.when(userService.getSecondaryCuisine(user)).thenReturn(new Cuisine[]{Cuisine.SOUTH_INDIAN,Cuisine.NORTH_INDIAN});
         List<String> output = Arrays.stream(restaurantRecommendations.getRestaurantRecommendations(user,restaurants)).collect(Collectors.toList());
         assertTrue(output.size()==expectedOutput.size() && expectedOutput.containsAll(output) && output.containsAll(expectedOutput));
     }
